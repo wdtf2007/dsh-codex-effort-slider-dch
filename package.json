@@ -1,0 +1,57 @@
+{
+  "name": "dsh-codex-effort-slider",
+  "version": "1.1.2-personal.3",
+  "description": "基于 Microqian2th/dsh-codex-effort-slider 扩展，适配 WSL043/dsh-codex-subscription 的 Codex 推理强度滑块",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "reasoning-effort",
+    "slider",
+    "ui"
+  ],
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "screenshots.json",
+    "LICENSE",
+    "test",
+    "preview",
+    "README.md",
+    "README.upstream.md",
+    "PERSONAL-NOTES.md",
+    "TEST-REPORT.md",
+    "GPT-SPEED-UPDATE.md",
+    "pack-personal.ps1"
+  ],
+  "scripts": {
+    "test": "node test/client.test.mjs && node test/subscription.test.mjs && node test/gpt-speed.test.mjs && node test/codex-motion.test.mjs && node test/deepseek-unchanged.test.mjs",
+    "preview": "node preview/make-preview.mjs",
+    "pack": "powershell -NoProfile -ExecutionPolicy Bypass -File ./pack-personal.ps1"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wdtf2007/dsh-codex-effort-slider-dch.git"
+  },
+  "homepage": "https://github.com/wdtf2007/dsh-codex-effort-slider-dch#readme"
+}
